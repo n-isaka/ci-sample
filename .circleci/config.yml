@@ -11,6 +11,7 @@ jobs:
       - image: circleci/openjdk:latest
     steps:
       - checkout
+      - run: javac HelloWorld.java
       - run: java HelloWorld
 workflows:
   version: 2
