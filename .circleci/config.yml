@@ -2,13 +2,13 @@ version: 2
 jobs:
   build:
     docker:
-      - image: image: circleci/openjdk:latest
+      - image: circleci/openjdk:latest
     steps:
       - checkout
       - run: javac HelloWorld.java
   test:
     docker:
-      - image: image: circleci/openjdk:latest
+      - image: circleci/openjdk:latest
     steps:
       - checkout
       - run: java HelloWorld
