@@ -2,17 +2,17 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/openjdk:latest
+      - image: opensourcecobol/opensource-cobol
     steps:
       - checkout
-      - run: javac HelloWorld.java
+      - run: cobc HELLO.cbl
   test:
     docker:
-      - image: circleci/openjdk:latest
+      - image: opensourcecobol/opensource-cobol
     steps:
       - checkout
-      - run: javac HelloWorld.java
-      - run: java HelloWorld
+      - run: cobc -m -o HELLO.so HELLO.cbl
+      - run: cobcrun HELLO
 workflows:
   version: 2
   build_and_test:
