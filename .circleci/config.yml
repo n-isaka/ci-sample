@@ -6,6 +6,7 @@ jobs:
     steps:
       - checkout
       - run: cobc HELLO.cbl
+      - run: cobc HELLO2.cbl
   test:
     docker:
       - image: opensourcecobol/opensource-cobol
