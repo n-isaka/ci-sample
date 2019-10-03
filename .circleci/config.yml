@@ -16,7 +16,8 @@ jobs:
       - run: cobcrun HELLO
       - run: cobc -m -o HELLO2.so HELLO2.cbl
       - run: cobcrun HELLO2
-      - run: cp SEQ-FILE /tmp/test-results
+      - run: mkdir /tmp/test-results
+      - run: cp SEQ001 /tmp/test-results
       # Save artifacts
       - store_test_results:
           path: /tmp/test-results
