@@ -23,15 +23,31 @@
        PROGRAM-ID.                 HELLO2.
        AUTHOR.                     TSH.
        DATE-WRITTEN.               2019-10-02.
-
+      ******************************************************************
+       ENVIRONMENT                 DIVISION.
+      ******************************************************************
+       INPUT-OUTPUT                SECTION.
+       FILE-CONTROL.
+           SELECT SEQ-FILE     ASSIGN TO "SEQ001"
+                                   ORGANIZATION SEQUENTIAL
+                                   FILE STATUS F-STATUS.
       ******************************************************************
        DATA                        DIVISION.
       ******************************************************************
+       FILE                        SECTION.
+       FD  SEQ-FILE.
+       01  SEQ-REC.
+           03   SEQ-DATA           PIC  X(10).
+      ******************************************************************
        WORKING-STORAGE             SECTION.
+       01  F-STATUS                PIC  XX.
       ******************************************************************
        PROCEDURE                   DIVISION.
       ******************************************************************
        MAIN-RTN.
-           DISPLA "HELLO WORLD!".
+           OPEN OUTPUT SEQ-FILE.
+           MOVE "123" TO SEQ-DATA.
+           WRITE SEQ-REC.
+           CLOSE SEQ-FILE.
        MAIN-EXT.
            STOP RUN.

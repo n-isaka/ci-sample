@@ -14,6 +14,8 @@ jobs:
       - checkout
       - run: cobc -m -o HELLO.so HELLO.cbl
       - run: cobcrun HELLO
+      - run: cobc -m -o HELLO2.so HELLO2.cbl
+      - run: cobcrun HELLO2
 workflows:
   version: 2
   build_and_test:
