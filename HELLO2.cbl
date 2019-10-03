@@ -28,7 +28,7 @@
       ******************************************************************
        INPUT-OUTPUT                SECTION.
        FILE-CONTROL.
-           SELECT SEQ-FILE     ASSIGN TO "SEQ001"
+           SELECT SEQ-FILE         ASSIGN TO "SEQ001"
                                    ORGANIZATION SEQUENTIAL
                                    FILE STATUS F-STATUS.
       ******************************************************************
